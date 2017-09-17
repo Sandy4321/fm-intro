@@ -1,0 +1,981 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"insert_data"
+			],
+			[
+				"w",
+				"write_json"
+			],
+			[
+				"write",
+				"write_output"
+			],
+			[
+				"st",
+				"stdout"
+			],
+			[
+				"echo",
+				"echo_text"
+			],
+			[
+				"std",
+				"stdout"
+			],
+			[
+				"row",
+				"row_array"
+			],
+			[
+				"is",
+				"isinstance"
+			],
+			[
+				"prob",
+				"probability"
+			],
+			[
+				"pickle",
+				"pickle_df"
+			],
+			[
+				"__",
+				"__dict__"
+			],
+			[
+				"fea",
+				"features_label"
+			],
+			[
+				"idf",
+				"idfModel"
+			],
+			[
+				"words",
+				"wordsData"
+			],
+			[
+				"sc",
+				"sentenceData"
+			],
+			[
+				"tex",
+				"textFile"
+			],
+			[
+				"Spa",
+				"SparkContext"
+			],
+			[
+				"data",
+				"data_out"
+			],
+			[
+				"impo",
+				"imported_file"
+			],
+			[
+				"file",
+				"file_date"
+			],
+			[
+				"fee",
+				"feedname"
+			],
+			[
+				"flag",
+				"flag_type"
+			],
+			[
+				"start",
+				"start_date"
+			],
+			[
+				"re",
+				"review_data"
+			],
+			[
+				"csv",
+				"csvfile"
+			],
+			[
+				"page",
+				"pageid"
+			],
+			[
+				"qu",
+				"queries"
+			],
+			[
+				"test",
+				"test0"
+			],
+			[
+				"quer",
+				"queries"
+			],
+			[
+				"que",
+				"query"
+			],
+			[
+				"fake",
+				"fake_data"
+			],
+			[
+				"h",
+				"h1_conv1"
+			],
+			[
+				"W",
+				"W_conv1"
+			],
+			[
+				"co",
+				"correct_prediction"
+			],
+			[
+				"reduce",
+				"reduce_mean"
+			],
+			[
+				"session",
+				"Session"
+			],
+			[
+				"init",
+				"Initialize"
+			],
+			[
+				"matri",
+				"matrix2"
+			],
+			[
+				"ma",
+				"Matmul"
+			],
+			[
+				"metric",
+				"metricMax\tlet"
+			],
+			[
+				"text_ma",
+				"text_margin_top"
+			],
+			[
+				"point",
+				"point_radius"
+			],
+			[
+				"val",
+				"valueY1"
+			],
+			[
+				"str",
+				"axis_stroke"
+			],
+			[
+				"dom",
+				"domainY"
+			],
+			[
+				"ver",
+				"versionList"
+			],
+			[
+				"or",
+				"order_i"
+			],
+			[
+				"dat",
+				"dataOut"
+			],
+			[
+				"version",
+				"versionOrder"
+			],
+			[
+				"v",
+				"versionCompare"
+			],
+			[
+				"champ",
+				"championId"
+			],
+			[
+				"dr",
+				"drawn"
+			],
+			[
+				"cla",
+				"classAddSummoner"
+			],
+			[
+				"summ",
+				"summonerId"
+			],
+			[
+				"_",
+				"_summonerProfileService"
+			],
+			[
+				"he",
+				"height_i"
+			],
+			[
+				"hei",
+				"heighTracker"
+			],
+			[
+				"margin",
+				"margins_match_count"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"reduc",
+				"reduceSum"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"sv",
+				"svg_height"
+			],
+			[
+				"dir",
+				"directives"
+			],
+			[
+				"cro",
+				"crossfilterData"
+			],
+			[
+				"mat",
+				"matcheCountLine"
+			],
+			[
+				"summon",
+				"summonerProfileService"
+			],
+			[
+				"match",
+				"match_count"
+			],
+			[
+				"profileDa",
+				"profileDataMod"
+			],
+			[
+				"profile",
+				"profileDataAll"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"cha",
+				"championList"
+			],
+			[
+				"math",
+				"match_count"
+			],
+			[
+				"cham",
+				"champId"
+			],
+			[
+				"champion",
+				"championId"
+			],
+			[
+				"ch",
+				"championList"
+			],
+			[
+				"valu",
+				"valueChamp"
+			],
+			[
+				"valueCh",
+				"valueChampGroupSum"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"styl",
+				"styleUrls\tproperty"
+			],
+			[
+				"bo",
+				"Boolean\tinterface"
+			],
+			[
+				"Lo",
+				"Logger\talias"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "setup.sh",
+			"settings":
+			{
+				"buffer_size": 474,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "#"
+			}
+		},
+		{
+			"file": "src/tf-intro.py",
+			"settings":
+			{
+				"buffer_size": 523,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nAnaconda\n--------\n\n  \n  \n                                                            |\n                _` |  __ \\    _` |   __|   _ \\   __ \\    _` |   _` |\n               (   |  |   |  (   |  (     (   |  |   |  (   |  (   |\n              \\__,_| _|  _| \\__,_| \\___| \\___/  _|  _| \\__,_| \\__,_|\n  \n                                       The Sublime Text 3 Python IDE\n  \n  \n  Welcome to anaconda, the Sublime Text 3 Python IDE. We hope you enjoy it :)\n  \n  Anaconda works fine out of the box but you can configure it to totally adapt\n  it to your needs or style.\n  \n  For a complete guide of use and configuration take a look at:\n  \n  \thttp://damnwidget.github.io/anaconda/\n  \n  Please, consider donating to maintain this project alive:\n  \n  \thttps://pledgie.com/campaigns/32230\n",
+			"settings":
+			{
+				"buffer_size": 828,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/scala.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/scala.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "packag",
+		"selected_items":
+		[
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"remote",
+				"SublimeREPL: remote_R"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jasonpark/Documents/Project/recommendation-engines/fm-intro",
+		"/Users/jasonpark/Documents/Project/recommendation-engines/fm-intro/src"
+	],
+	"file_history":
+	[
+		"/Users/jasonpark/Documents/Project/recommendation-engines/fastfm/example/load_problems.py",
+		"/Users/jasonpark/Library/Application Support/Sublime Text 3/Packages/User/scala.sublime-build",
+		"/Users/jasonpark/Google Drive/Learning/Scala/Programming in Scala/ch2_001_intro.scala",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/reviews/upload_mysql.py",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/data/review_word2vec_2016-11-07T15h44m04s/part-r-00000-4711437e-f6c2-493f-aae3-0c9b82857f97.json",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/__init__.py",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/syntaxnet/syntaxnet_submit.py",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/example/spark_ex.py",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/read/example.py",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/setup/setup.sh",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/read/test.py",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/reviews/document.md",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/setup/config.md",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/read/example_user_summit.py",
+		"/Users/jasonpark/Google Drive/Learning/STEAM/scrape_all.py",
+		"/Users/jasonpark/Google Drive/Learning/STEAM/scraper.py",
+		"/Users/jasonpark/Library/Application Support/Sublime Text 3/Packages/User/SublimeREPL.sublime-settings",
+		"/Users/jasonpark/Library/Application Support/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/read/read_data.py",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/setup/README.txt",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/src/setup/README.md",
+		"/Users/jasonpark/Documents/Project/EA/spark_emr/data/randomwords.txt",
+		"/Users/jasonpark/Downloads/setup.sh",
+		"/Users/jasonpark/Downloads/README.md",
+		"/Users/jasonpark/Documents/Project/EA/awssdkex/s3_sample.py",
+		"/Users/jasonpark/Google Drive/Learning/STEAM/vector_rep/vector_rep.py",
+		"/Users/jasonpark/Google Drive/Learning/STEAM/tsne.png",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/Introduction/Introduction_0102_MINIST_convolutional_nn.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/Introduction/Introduction_0100_MINIST_softmax_RAW.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/Introduction/Introduction_0100_MINIST_softmax.py",
+		"/Users/jasonpark/Google Drive/Learning/STEAM/test.py",
+		"/Users/jasonpark/Google Drive/Learning/STEAM/dataclean.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/Introduction/Language_0100_vector_representation.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/Introduction/Introduction_0120_tensorflow_mechanics_101.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/Introduction/Introduction_0010_Basic_Usage.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/Introduction/Introduction_0_data.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/Introduction/test.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/steam_reviews/src/scraper.py",
+		"/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/__init__.py",
+		"/Users/jasonpark/Documents/Learning/Learning_TensorFlow/src/mechanics101/mechanics101.py",
+		"/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/tensorflow/python/framework/ops.py",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/profile-display.component.js",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/plots/plot-growth.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/plots/plot-growth.component.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/plots/plot-diff.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/plots/plot-diff.component.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/tab-main.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/tab-main.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/tab-items.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/tab-items.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/cards/card-match-count-bar.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/add-summoner.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/add-summoner.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/add-summoner.component.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/route/templates/summoner-profile.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/cards/card-rect-bar.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/plots/plot-growth.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/plots/plot-diff.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/cards/card-rect.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/plots/plot-timeline.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/route/templates/summoner-profile.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/config/services/api-url.service.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/search-summoner/search-lol.service.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/config/services/variables/itemiconversion.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/cards/card-winrate.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/filter-champion.pipe.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/profile-display.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/cards/card-match-count.component.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/cards/card-match-count.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/profile-display.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/mod-timeline-scrub.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/profile-display.component.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/mod-timeline-scrub.component.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/mod-timeline-scrub.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/services/profile-charts.service.timeline-scrubber.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/cards/card-match-count.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/public/css/style.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/components/module-role.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/services/profile-charts.service.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/route/templates/summoner-profile.component.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/components/module-role.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/timeline-profile.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/timeline-profile.component.css",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/timeline-profile.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/route/theorycraftr-app.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/mod-card-stat.component.html",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/route/templates/summoner-profile.service.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/directives/module-role.directive.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/node_modules/angular2/package.json",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/profile/modules/test.js",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/wiki/wiki-smart.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/wiki/wiki.component.ts",
+		"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/wiki/wikipedia.service.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin_dev/app/toh/hero-list.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/profile/summoner-profile.component.html",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/profile/summoner-profile.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/config/api/api-endpoints.service.provider.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/search/summoner/search-summoner.component.html",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/search/summoner/search-summoner.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/login/login-form.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/app/app.component.js.map",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/app/app.config.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/search/region/region-dropdown.css",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/search/region/region-dropdown.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/hero/services/hero.service.provider.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/hero/components/heroes.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/app/app.component.html",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/dashboard/dashboard.component.html",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/app/app.config.js",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/user/user.service.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/hero/services/hero.service.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/hero/components/hero-list.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/hero/components/hero-detail.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/riot/riot-summoner.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/dashboard/dashboard.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/app/app.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/main.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/login/login.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/logger/logger.service.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/login/login-form.component.css",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/login/login-form.component.html",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/main.js",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/dashboard/dashboard.component.js.map",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/package.json",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/dashboard.component.html",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/dashboard.component.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/services/control-parameters.service.ts",
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/hero-detail.component.ts"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app",
+			"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/\\.*\\.ts",
+			"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/.*.ts",
+			"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/*.ts",
+			"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/.ts",
+			"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app",
+			"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/",
+			"/Users/jasonpark/Documents/Project/Theorycraftr/kaladin_dev/app/*.ts",
+			"*.ts",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ngram",
+			"sys.stdin",
+			"fix_date",
+			"result",
+			"location",
+			"data_headers",
+			"appid =",
+			"print",
+			"date",
+			"[i]",
+			"skl",
+			"maybe_download",
+			"embeddings",
+			"url",
+			"absolute_import",
+			"sess",
+			"sess.clos",
+			"angular2/",
+			"angular2/http",
+			"angular2/common",
+			"{{iconBest}}",
+			" style=\"width: 30px;\"",
+			"text-size",
+			"precision10",
+			"plotGrowth",
+			"valueY",
+			"groupTimeline",
+			"transition()",
+			"groupTimeline",
+			"line(",
+			"interpo",
+			"line(",
+			"endpoint",
+			"versionListReverse",
+			"groupTimeline",
+			"summonerProfile",
+			"SearchLolSearvice",
+			"_searchLolSearvice",
+			"getDDItems",
+			"DDChampions",
+			"icon",
+			"ApiUrl",
+			"filterFunction",
+			"dataTimeline",
+			"mapTimeline",
+			"dataItemsId",
+			"dataItems",
+			"mapItems",
+			"versionListReverse",
+			"mapItems",
+			"cleanDraw",
+			"drawAll",
+			"cleanTimelineProfile",
+			"drawAll",
+			"dataTimeline",
+			"mapTimeline",
+			"shrink",
+			"add-button",
+			"shrink",
+			"onScroll",
+			"toup",
+			"groupMasterKey_career |",
+			"groupMasterKey_career",
+			"data",
+			"stat_max",
+			"summonerInfoList",
+			"summonerInfoAll",
+			"summonerInfo",
+			"summonerInfoList",
+			"summonerInfoAll",
+			"summonerInfoUpdated",
+			"subscribeSummonerInfo",
+			"regionSummonerId",
+			"inputSummonerName",
+			"addSummonerProfile",
+			"summonerInfoList",
+			"add",
+			"card-block",
+			"card-stat-major",
+			"fill",
+			"textContent",
+			"stat_scale",
+			"stat_max",
+			"statMax",
+			"dataMax",
+			"render",
+			"statScale",
+			"stat_scale",
+			"render",
+			"draw",
+			"stat_scale",
+			"statscale",
+			"stat_scale",
+			"timelineProfile",
+			"summonerInfo",
+			"this.summonerInfo ",
+			"summonerInfo",
+			"getRegions",
+			"roles",
+			"elSummonerBox",
+			"mostPlayedChampShow",
+			"summonerInfoList",
+			"dataProfile",
+			"submitSummonerName",
+			"classAddSummoner",
+			"summonerInfoList",
+			"summonerName",
+			"regionSelected",
+			"regions",
+			"regionSelected",
+			"differ",
+			"intializeFilter",
+			"filterAll",
+			"onHoverFocusChamp",
+			"intializeFilter",
+			"filterc",
+			"filterChampion(",
+			"filterChampion",
+			"filterChamp",
+			"filterAll",
+			"championImageIcon",
+			"DD_Image_ChampIcon",
+			"filterall",
+			"_searchLolSearvice",
+			"filterAll",
+			"remove",
+			"index",
+			"getMostPlayedChamp"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"[order]",
+			"&#x2605;",
+			"",
+			"font-size",
+			"valueY1",
+			"groupMaster",
+			"dataOut",
+			"summonerInfo",
+			"statScale",
+			"statMax",
+			"1s",
+			"-beta.14",
+			"#chart-match-count-line",
+			"summonerListAll",
+			"valueVersion",
+			"profileData"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "setup.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								474,
+								474
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/tf-intro.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 523,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55,
+								55
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								828,
+								828
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 176.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "fm-intro.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 307.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
