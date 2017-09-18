@@ -6,7 +6,7 @@
 conda info --envs
 
 # Create a new Anaconda environment
-conda create --name fm-intro python=3.5 numpy scikit-learn
+conda create --name fm-intro python=3.5 numpy scikit-learn pandas
 
 # Activate
 source activate fm-intro
