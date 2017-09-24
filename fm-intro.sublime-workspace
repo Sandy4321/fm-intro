@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"X_",
+				"X_raw\tstatement"
+			],
+			[
+				"data_den",
+				"data_dense_mat\tstatement"
+			],
+			[
+				"to",
+				"toarray"
+			],
+			[
+				"Var",
+				"Variable"
+			],
+			[
+				"V",
+				"Variables"
+			],
+			[
+				"file",
+				"filepath\tparam"
+			],
+			[
+				"max",
+				"max_pool_2x2\tfunction"
+			],
+			[
 				"in",
 				"insert_data"
 			],
@@ -78,10 +106,6 @@
 			[
 				"impo",
 				"imported_file"
-			],
-			[
-				"file",
-				"file_date"
 			],
 			[
 				"fee",
@@ -339,30 +363,109 @@
 			"file": "setup.sh",
 			"settings":
 			{
-				"buffer_size": 474,
+				"buffer_size": 481,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "#"
 			}
 		},
 		{
+			"file": "setup-gpu.sh",
+			"settings":
+			{
+				"buffer_size": 738,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "src/tf-intro.py",
 			"settings":
 			{
-				"buffer_size": 523,
+				"buffer_size": 1325,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/tf/load_data.py",
+			"settings":
+			{
+				"buffer_size": 7164,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "class LoadData(object):"
+			}
+		},
+		{
+			"file": "fm-intro.sublime-project",
+			"settings":
+			{
+				"buffer_size": 289,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Package Control Messages\n========================\n\nAnaconda\n--------\n\n  \n  \n                                                            |\n                _` |  __ \\    _` |   __|   _ \\   __ \\    _` |   _` |\n               (   |  |   |  (   |  (     (   |  |   |  (   |  (   |\n              \\__,_| _|  _| \\__,_| \\___| \\___/  _|  _| \\__,_| \\__,_|\n  \n                                       The Sublime Text 3 Python IDE\n  \n  \n  Welcome to anaconda, the Sublime Text 3 Python IDE. We hope you enjoy it :)\n  \n  Anaconda works fine out of the box but you can configure it to totally adapt\n  it to your needs or style.\n  \n  For a complete guide of use and configuration take a look at:\n  \n  \thttp://damnwidget.github.io/anaconda/\n  \n  Please, consider donating to maintain this project alive:\n  \n  \thttps://pledgie.com/campaigns/32230\n",
+			"file": "src/tf/mnist.py",
 			"settings":
 			{
-				"buffer_size": 828,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
+				"buffer_size": 1150,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/tf/mnist_deep.py",
+			"settings":
+			{
+				"buffer_size": 2458,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/tf/fm-prototype.py",
+			"settings":
+			{
+				"buffer_size": 3541,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 1211,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/tf/paper/FM.py",
+			"settings":
+			{
+				"buffer_size": 18320,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "'''"
+			}
+		},
+		{
+			"file": "data/ml-100k/README",
+			"settings":
+			{
+				"buffer_size": 6750,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/hetrec2011-movielens-2k-v2/user_taggedmovies.dat",
+			"settings":
+			{
+				"buffer_size": 1623662,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -463,11 +566,19 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jasonpark/Documents/Project/recommendation-engines/fm-intro",
-		"/Users/jasonpark/Documents/Project/recommendation-engines/fm-intro/src"
+		"/G/Projects/fm-intro",
+		"/G/Projects/fm-intro/src",
+		"/G/Projects/fm-intro/src/tf"
 	],
 	"file_history":
 	[
+		"/G/Projects/fm-intro/data/ml-100k/u.data",
+		"/G/Projects/fm-intro/data/ml-1m/ratings.dat",
+		"/G/Projects/fm-intro/data/ml-100k/u.item",
+		"/G/Projects/fm-intro/.gitignore",
+		"/G/Projects/fm-intro/data/hetrec2011-movielens-2k-v2/tags.dat",
+		"/C/Users/Seraphyx/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/Seraphyx/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
 		"/Users/jasonpark/Documents/Project/recommendation-engines/fastfm/example/load_problems.py",
 		"/Users/jasonpark/Library/Application Support/Sublime Text 3/Packages/User/scala.sublime-build",
 		"/Users/jasonpark/Google Drive/Learning/Scala/Programming in Scala/ch2_001_intro.scala",
@@ -588,18 +699,11 @@
 		"/C/Users/Seraphyx/Documents/Project/kaladin/app/login/login.ts",
 		"/C/Users/Seraphyx/Documents/Project/kaladin/app/logger/logger.service.ts",
 		"/C/Users/Seraphyx/Documents/Project/kaladin/app/login/login-form.component.css",
-		"/C/Users/Seraphyx/Documents/Project/kaladin/app/login/login-form.component.html",
-		"/C/Users/Seraphyx/Documents/Project/kaladin/app/main.js",
-		"/C/Users/Seraphyx/Documents/Project/kaladin/app/dashboard/dashboard.component.js.map",
-		"/C/Users/Seraphyx/Documents/Project/kaladin/package.json",
-		"/C/Users/Seraphyx/Documents/Project/kaladin/app/dashboard.component.html",
-		"/C/Users/Seraphyx/Documents/Project/kaladin/app/dashboard.component.ts",
-		"/C/Users/Seraphyx/Documents/Project/kaladin/app/services/control-parameters.service.ts",
-		"/C/Users/Seraphyx/Documents/Project/kaladin/app/hero-detail.component.ts"
+		"/C/Users/Seraphyx/Documents/Project/kaladin/app/login/login-form.component.html"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -620,9 +724,18 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"MatMul",
+			"mut",
+			"n",
+			"_initialize_weights",
+			"graph",
+			"FM",
+			"dataset",
+			"path",
+			"lint",
 			"ngram",
 			"sys.stdin",
 			"fix_date",
@@ -741,16 +854,7 @@
 			"filterc",
 			"filterChampion(",
 			"filterChampion",
-			"filterChamp",
-			"filterAll",
-			"championImageIcon",
-			"DD_Image_ChampIcon",
-			"filterall",
-			"_searchLolSearvice",
-			"filterAll",
-			"remove",
-			"index",
-			"getMostPlayedChamp"
+			"filterChamp"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -778,13 +882,13 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -793,15 +897,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 474,
+						"buffer_size": 481,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								474,
-								474
+								288,
+								288
 							]
 						],
 						"settings":
@@ -813,24 +917,52 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/tf-intro.py",
+					"file": "setup-gpu.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 523,
+						"buffer_size": 738,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								55,
-								55
+								300,
+								306
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/tf-intro.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								445
 							]
 						],
 						"settings":
@@ -852,37 +984,318 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
+					"file": "src/tf/load_data.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 828,
+						"buffer_size": 7164,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								828,
-								828
+								6898,
+								6898
 							]
 						],
 						"settings":
 						{
-							"auto_indent": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"auto_name": "class LoadData(object):",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2107.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "fm-intro.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								289,
+								289
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/tf/mnist.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								403,
+								403
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/tf/mnist_deep.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								774,
+								774
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/tf/fm-prototype.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3073,
+								3073
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1176.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1211,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								312,
+								312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/tf/paper/FM.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9728,
+								9741
+							]
+						],
+						"settings":
+						{
+							"auto_name": "'''",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1680.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "data/ml-100k/README",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6750,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4554,
+								4559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 966.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "data/hetrec2011-movielens-2k-v2/user_taggedmovies.dat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1623662,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1036,
+								1036
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -890,11 +1303,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 22.0
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 34.0
 	},
 	"layout":
 	{
@@ -905,11 +1318,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -925,13 +1345,13 @@
 	},
 	"output.exec":
 	{
-		"height": 176.0
+		"height": 218.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"pinned_build_system": "Anaconda Python Builder",
 	"project": "fm-intro.sublime-project",
 	"replace":
 	{
@@ -965,7 +1385,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

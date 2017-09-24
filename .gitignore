@@ -27,6 +27,13 @@ wheels/
 
 # Remove Data
 data/
+*/data/
+
+# Ignore Checkpoint Logs
+logs/
+*/logs/
+*.ckpt
+
 
 # MNIST data
 src/tf/MNIST_data/
