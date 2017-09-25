@@ -66,7 +66,8 @@ y_hat = tf.Variable(tf.zeros([n, 1]))
 linear_terms = tf.add(b, tf.reduce_sum(tf.multiply(W, X), 1, keep_dims=True))
 
 # Factorization Interactions
-interactions = (tf.multiply(0.5,
+interactions = (tf.multiply(
+    0.5,
 	tf.reduce_sum(tf.subtract(
 		tf.pow(tf.matmul(X, tf.transpose(V)), 2),
 		tf.matmul(tf.pow(X, 2), tf.transpose(tf.pow(V, 2)))),

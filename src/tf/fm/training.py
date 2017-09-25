@@ -8,41 +8,41 @@ from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
 # Local modules
-import input_data
-import model
-
+import fm as model
+import load_data
 
 # Basic model parameters as external flags.
 class Flags(object):
 
 	def __init__(self):
-		self.batch_size = 200
+		self.batch_size = 1000
 		self.fake_data = False
-		self.input_data_dir = './data'
+		self.input_data_dir = "../../../data/ml-100k"
+		self.input_data_filename = 'u.data'
 		self.log_dir = './logs'
-		self.hidden_1 = 128
+		self.latent_factors = 1
 		self.hidden_2 = 32
 		self.learning_rate = 0.01
-		self.max_steps = 5000
+		self.max_steps = 1000
 
 # Initialize
 FLAGS = Flags()
 
 
-def placeholder_inputs(batch_size):
+def placeholder_inputs(batch_size, num_feature):
 	"""Generate placeholder for inputs
 	"""
 
-	images_placeholder = tf.placeholder(
+	input_placeholder = tf.placeholder(
 		tf.float32,
-		shape=(batch_size, model.NUM_FEATURE))
+		shape=(batch_size, num_feature))
 	labels_placeholder = tf.placeholder(
 		tf.int32,
 		shape=(batch_size))
-	return images_placeholder, labels_placeholder
+	return input_placeholder, labels_placeholder
 
 
-def fill_feed_dict(data_set, images_pl, labels_pl):
+def fill_feed_dict(data_set, feature_pl, labels_pl):
 	"""Fill the placeholders with actual data
 
 	Return:
@@ -51,9 +51,9 @@ def fill_feed_dict(data_set, images_pl, labels_pl):
 
 	# Create the feed_dict output for the placeholders filled with the 
 	# batch data
-	images_feed, labels_feed = data_set.next_batch(FLAGS.batch_size, FLAGS.fake_data)
+	input_feed, labels_feed = data_set.next_batch(FLAGS.batch_size, FLAGS.fake_data)
 	feed_dict = {
-		images_pl: images_feed,
+		feature_pl: input_feed,
 		labels_pl: labels_feed
 	}
 	return feed_dict
@@ -61,7 +61,7 @@ def fill_feed_dict(data_set, images_pl, labels_pl):
 
 def do_eval(sess,
 			eval_correct,
-			images_placeholder,
+			input_placeholder,
 			labels_placeholder,
 			data_set):
 	"""Evaluate using the model.eval_correct()
@@ -73,31 +73,39 @@ def do_eval(sess,
 	for step in xrange(steps_per_epoch):
 		feed_dict = fill_feed_dict(
 			data_set, 
-			images_placeholder, 
+			input_placeholder, 
 			labels_placeholder)
+
+		print('feed_dict')
+		print(feed_dict)
 		true_count += sess.run(eval_correct, feed_dict=feed_dict)
 	precision = float(true_count) / num_examples
 	print('  Num examples: %d  Num correct: %d  Precision @ 1: %0.04f' %
 		(num_examples, true_count, precision))
 
 
+
 def run_training():
 	"""Train data for a number of steps
 	"""
-	# Get TRAIN, TEST, VALID datasets
-	data_sets = input_data.read_data_sets(FLAGS.input_data_dir, FLAGS.fake_data)
+	# Get data
+	data_sets = load_data.sparse_to_dense(
+		path=FLAGS.input_data_dir, 
+		filename=FLAGS.input_data_filename, 
+		header=['user_id','item_id','rating','timestamp'],
+		cols=['user_id','item_id','rating'])
 
 	# Build a single graph
 	with tf.Graph().as_default():
 		
 		# Generate placeholders
-		images_placeholder, labels_placeholder = placeholder_inputs(FLAGS.batch_size)
+		input_placeholder, labels_placeholder = placeholder_inputs(FLAGS.batch_size, data_sets.num_feature)
 
 		# Build a Graph that computes predictions
-		logits = model.inference(
-			images_placeholder, 
-			FLAGS.hidden_1, 
-			FLAGS.hidden_2)
+		logits = model.model(
+			input_placeholder, 
+			FLAGS.latent_factors,
+			data_sets.num_feature)
 
 		# Get Loss from data
 		loss = model.loss(logits, labels_placeholder)
@@ -134,16 +142,19 @@ def run_training():
 
 			# Print Dataset
 			if step == 0:
-				# print('data_sets')
-				# x, y = data_sets.train.next_batch(100)
-				# print(x.shape)
-				# print(y.shape)
+				pass
+				# print(vars(data_sets))
 
 			# Feed the training data
 			feed_dict = fill_feed_dict(
 				data_sets.train,
-				images_placeholder,
+				input_placeholder,
 				labels_placeholder)
+
+
+			# Print Dataset
+			if step == 0:
+				print(feed_dict)
 
 			# Run a step of the model defined by 'train_op' and 'loss'
 			_, loss_value = sess.run([train_op, loss], feed_dict=feed_dict)
@@ -168,21 +179,21 @@ def run_training():
 				print('Training Data Eval:')
 				do_eval(sess,
 						eval_correct,
-						images_placeholder,
+						input_placeholder,
 						labels_placeholder,
 						data_sets.train)
 				# Evaluate against the validation set.
 				print('Validation Data Eval:')
 				do_eval(sess,
 						eval_correct,
-						images_placeholder,
+						input_placeholder,
 						labels_placeholder,
 						data_sets.validation)
 				# Evaluate against the test set.
 				print('Test Data Eval:')
 				do_eval(sess,
 						eval_correct,
-						images_placeholder,
+						input_placeholder,
 						labels_placeholder,
 						data_sets.test)
 
