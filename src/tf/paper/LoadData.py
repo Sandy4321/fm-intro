@@ -125,8 +125,18 @@ if __name__ == "__main__":
 
     data = LoadData(path='../../intro/data/', dataset='ml-tag')
 
+    print("==== features_M")
+    print(data.features_M)
+    print("==== features")
+    print(len(data.features.keys()))
 
 
+    print("==== Data")
     for key in data.Test_data:
         print( "key: %s , value: %s" % (key, len(data.Test_data[key])))
         print(data.Test_data[key][1:10])
+        if(key == 'X'):
+            print(data.Test_data[key][0])
+            print(type(data.Test_data[key][0]))
+
+

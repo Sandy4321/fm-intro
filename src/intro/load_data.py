@@ -16,6 +16,7 @@ Load Data
 
 import sys
 import argparse
+from math import floor, ceil
 
 import numpy as np
 import pandas as pd
@@ -27,10 +28,14 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Load Data.")
     parser.add_argument('--filename', nargs=1, default='u.data',
                         help='Filename of the dataset.')
-    parser.add_argument('--path', nargs=1, default='./data/movielens-100k',
+    parser.add_argument('--path', nargs=1, default='./data/ml-100k',
                         help='Path to the dataset folder.')
     parser.add_argument('--dataset', nargs=1, default='movielens-100k',
                         help='Which dataset type is it so that it is parsed accordingly.')
+    parser.add_argument('--seed', nargs=1, default=1337,
+                        help='Set seed for repoducibility.')
+    parser.add_argument('--split', nargs=1, default=[0.8, 0.1, 0.1],
+                        help='Dataset split proportion [train, valid, test].')
     return parser.parse_args()
 
 
@@ -38,13 +43,15 @@ def parse_args():
 # Load the data    
 class LoadData(object):
 
-	def __init__(self, path, filename, dataset='none'):
+	def __init__(self, path, filename, dataset='none', seed=None, split=[0.8, 0.1, 0.1]):
 		self.path = path
 		self.filename = filename
 		self.full_path = self.path + '/' + self.filename
 		self.dataset = dataset
+		self.seed = seed
+		self.split = split
 
-		self.data = self.ParseRaw()
+		self.ParseRaw()
 
 
 	# If the dataset is raw then parse through it
@@ -55,12 +62,39 @@ class LoadData(object):
 			return self.ML100K()
 		elif(self.dataset == 'ml-latest-small'):
 			return self.MLLatestSmall()
-		else:
 		elif(self.dataset == 'none'):
 			print("No dataset selected")
 		else:
 			print("Dataset parsing method not available.")
 
+
+	def SplitData(self):
+
+		if self.seed is not None:
+			np.random.seed(self.seed)
+		
+		n = len(self.X)
+		index = np.arange(n)
+		i_train = int(floor(n * self.split[0]))
+		i_valid = int(floor(n * sum(self.split[:2])))
+
+		# Shuffle index
+		np.random.shuffle(index)
+
+		index_train = index[:i_train]
+		index_valid = index[i_train:i_valid]
+		index_test  = index[i_valid:]
+
+		self.data_train = {
+			'X': [self.X[i] for i in index_train], 
+			'Y': [self.y[i] for i in index_train]}
+		self.data_valid = {
+			'X': [self.X[i] for i in index_valid], 
+			'Y': [self.y[i] for i in index_valid]}
+		self.data_test = {
+			'X': [self.X[i] for i in index_test], 
+			'Y': [self.y[i] for i in index_test]}
+			
 
 	def ML100K(self):
 		'''
@@ -92,10 +126,16 @@ class LoadData(object):
 		movie_ratings = pd.merge(movies, ratings)
 		lens = pd.merge(movie_ratings, users)
 
-		# Drop columns not needed
+		# Select only columns needed
+		y = lens[['rating']].values.tolist()
+		X = lens[['movie_id', 'user_id'] + m_cols_type].values.tolist()
 
+		self.data = lens
+		self.X = X
+		self.y = y
 
-		return lens
+		# split into train test 
+		self.SplitData()
 		
 
 	def MLLatestSmall(self):
@@ -119,4 +159,9 @@ if __name__ == '__main__':
 	# Pass argumants
 	data = LoadData(**argv)
 
-	print(data.data.head())
+	# print(data.data.head())
+	print(data.data_train['X'][:10])
+
+
+
+
