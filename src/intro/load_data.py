@@ -26,8 +26,6 @@ import tensorflow as tf
 # Parse arguments for loading data
 def parse_args():
     parser = argparse.ArgumentParser(description="Load Data.")
-    parser.add_argument('--filename', nargs=1, default='u.data',
-                        help='Filename of the dataset.')
     parser.add_argument('--path', nargs=1, default='./data/ml-100k',
                         help='Path to the dataset folder.')
     parser.add_argument('--dataset', nargs=1, default='movielens-100k',
@@ -43,10 +41,8 @@ def parse_args():
 # Load the data    
 class LoadData(object):
 
-	def __init__(self, path, filename, dataset='none', seed=None, split=[0.8, 0.1, 0.1]):
+	def __init__(self, path, dataset='none', seed=None, split=[0.8, 0.1, 0.1]):
 		self.path = path
-		self.filename = filename
-		self.full_path = self.path + '/' + self.filename
 		self.dataset = dataset
 		self.seed = seed
 		self.split = split
@@ -57,14 +53,17 @@ class LoadData(object):
 	# If the dataset is raw then parse through it
 	def ParseRaw(self):
 
+		self.load_success = True
+
 		# handle datasets accordingly
 		if(self.dataset == 'movielens-100k'):
 			return self.ML100K()
 		elif(self.dataset == 'ml-latest-small'):
 			return self.MLLatestSmall()
 		elif(self.dataset == 'none'):
-			print("No dataset selected")
+			print("===No dataset selected")
 		else:
+			self.load_success = False
 			print("Dataset parsing method not available.")
 
 
@@ -127,8 +126,19 @@ class LoadData(object):
 		lens = pd.merge(movie_ratings, users)
 
 		# Select only columns needed
-		y = lens[['rating']].values.tolist()
-		X = lens[['movie_id', 'user_id'] + m_cols_type].values.tolist()
+		y = lens['rating']
+		X = lens[['movie_id', 'user_id'] + m_cols_type]
+
+		# Count parameter space
+		dct = {func.__name__:X.apply(func) for func in (pd.Series.nunique, pd.Series.count)}
+		X_count = pd.concat(dct, axis=1)
+		self.features_p = sum(X_count['nunique'])
+		self.col_m = len(X.columns)
+
+		# Convert to list
+		y = y.values.tolist()
+		X = X.values.tolist()
+
 
 		self.data = lens
 		self.X = X
@@ -161,6 +171,7 @@ if __name__ == '__main__':
 
 	# print(data.data.head())
 	print(data.data_train['X'][:10])
+	print(data.data_train['Y'][:10])
 
 
 
