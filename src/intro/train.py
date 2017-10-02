@@ -24,7 +24,7 @@ import model as model_classes
 
 
 #===== Parse Arguments
-def parse_args_train():
+def parse_args_train(model_type):
 	parser = argparse.ArgumentParser(description="Run Collaborative Filter models.")
 
 	parser.add_argument('--filename', nargs=1, default='u.data',
@@ -39,17 +39,14 @@ def parse_args_train():
 						help='Set seed for repoducibility.')
 	parser.add_argument('--split', nargs=1, default=[0.8, 0.1, 0.1],
 						help='Dataset split proportion [train, valid, test].')
+
+	# Model
 	parser.add_argument('--model_type', nargs='?', default='FM',
 						help='Model to run.')
-
 	parser.add_argument('--process', nargs='?', default='train',
 						help='Process type: train, evaluate.')
 	parser.add_argument('--mla', type=int, default=0,
 						help='Set the experiment mode to be Micro Level Analysis or not: 0-disable, 1-enable.')
-	# parser.add_argument('--path', nargs='?', default='../data/',
-	# 					help='Input data path.')
-	# parser.add_argument('--dataset', nargs='?', default='ml-tag',
-	# 					help='Choose a dataset.')
 	parser.add_argument('--epoch', type=int, default=20,
 						help='Number of epochs.')
 	parser.add_argument('--pretrain', type=int, default=-1,
@@ -72,7 +69,44 @@ def parse_args_train():
 						help='Whether to show the performance of each epoch (0 or 1)')
 	parser.add_argument('--batch_norm', type=int, default=1,
 						help='Whether to perform batch normaization (0 or 1)')
+
+
+	# Attentional Factorization
+	parser.add_argument('--valid_dimen', type=int, default=3,
+						help='Valid dimension of the dataset. The number of columns (e.g. frappe=10, ml-tag=3)')
+	parser.add_argument('--epoch', type=int, default=20,
+						help='Number of epochs.')
+	parser.add_argument('--pretrain', type=int, default=-1,
+						help='flag for pretrain. 1: initialize from pretrain; 0: randomly initialize; -1: save to pretrain file; 2: initialize from pretrain and save to pretrain file')
+	parser.add_argument('--batch_size', type=int, default=4096,
+						help='Batch size.')
+	parser.add_argument('--attention', type=int, default=1,
+						help='flag for attention. 1: use attention; 0: no attention')
+	parser.add_argument('--hidden_factor', nargs='?', default='[16,16]',
+						help='Number of hidden factors.')
+	parser.add_argument('--lamda_attention', type=float, default=1e+2,
+						help='Regularizer for attention part.')
+	parser.add_argument('--keep', nargs='?', default='[1.0,0.5]',
+						help='Keep probility (1-dropout) of each layer. 1: no dropout. The first index is for the attention-aware pairwise interaction layer.')
+	parser.add_argument('--lr', type=float, default=0.1,
+						help='Learning rate.')
+	parser.add_argument('--freeze_fm', type=int, default=0,
+						help='Freese all params of fm and learn attention params only.')
+	parser.add_argument('--optimizer', nargs='?', default='AdagradOptimizer',
+						help='Specify an optimizer type (AdamOptimizer, AdagradOptimizer, GradientDescentOptimizer, MomentumOptimizer).')
+	parser.add_argument('--verbose', type=int, default=1,
+						help='Whether to show the performance of each epoch (0 or 1)')
+	parser.add_argument('--batch_norm', type=int, default=0,
+					help='Whether to perform batch normaization (0 or 1)')
+	parser.add_argument('--decay', type=float, default=0.999,
+					help='Decay value for batch norm')
+	parser.add_argument('--activation', nargs='?', default='relu',
+					help='Which activation function to use for deep layers: relu, sigmoid, tanh, identity')
+
+
 	return parser.parse_args()
+
+
 
 
 def make_save_file(args):
@@ -101,37 +135,57 @@ def train(args):
 			  %(args.dataset, args.factor_k, args.epoch, args.batch_size, args.learning_rate, args.lamda_bilinear, args.dropout_keep_rate, args.optimizer_type, args.batch_norm))
 
 
+	t1 = time()
 
 	# Choose model
 	if args.model_type == 'FM':
 		model_class = model_classes.fm.FM
+		model = model_class(
+				features_p = data.features_p, 
+				factor_k = args.factor_k, 
+				col_m = data.col_m,
+				lamda_bilinear = args.lamda_bilinear, 
+				dropout_keep_rate = args.dropout_keep_rate, 
+				epoch = args.epoch, 
+				batch_size = args.batch_size, 
+				learning_rate = args.learning_rate, 
+				optimizer_type = args.optimizer_type, 
+				batch_norm = args.batch_norm, 
+				pretrain_flag = args.pretrain,
+				save_file = make_save_file(args),
+				self_terminate = args.self_terminate,
+				verbose = args.verbose, 
+				seed=1337)
+	elif args.model_type == 'AFM':
+		model_class = model_classes.afm.AFM
+		model = model_class(
+				features_p=data.features_p, 
+				pretrain_flag= args.pretrain, 
+				save_file=make_save_file(args), 
+				attention=args.attention, 
+				factor_k=args.factor_k, 
+				valid_dimension=data.col_m, 
+				activation_function=args.activation, 
+				freeze_fm=args.freeze_fm, 
+				epoch = args.epoch, 
+				batch_size = args.batch_size, 
+				learning_rate = args.learning_rate, 
+				lamda_attention=args.lamda_attention, 
+				keep=args.keep, 
+				optimizer_type = args.optimizer_type, 
+				batch_norm = args.batch_norm, 
+				decay=args.decay, 
+				verbose = args.verbose, 
+				micro_level_analysis=args.mla, 
+				random_seed=args.seed)
 	else:
 		print("=== Please select a model type.")
 		return
 
-	# Training
-	t1 = time()
-	# model = model_class(**argv)
-	model = model_class(
-			features_p = data.features_p, 
-			factor_k = args.factor_k, 
-			col_m = data.col_m,
-			lamda_bilinear = args.lamda_bilinear, 
-			dropout_keep_rate = args.dropout_keep_rate, 
-			epoch = args.epoch, 
-			batch_size = args.batch_size, 
-			learning_rate = args.learning_rate, 
-			optimizer_type = args.optimizer_type, 
-			batch_norm = args.batch_norm, 
-			pretrain_flag = args.pretrain,
-			save_file = make_save_file(args),
-			self_terminate = args.self_terminate,
-			verbose = args.verbose, 
-			seed=1337)
 
 	# Begin Training
 	model.train(data.data_train, data.data_valid, data.data_test)
-    
+	
 	
 	# Find the best validation result across iterations
 	best_valid_score = 0
