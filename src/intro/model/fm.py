@@ -144,9 +144,6 @@ class FM(BaseEstimator, TransformerMixin):
 			self.sess.run(init)
 
 			#=== Summary
-			# Get Summary Tensor
-			# self.summary = tf.summary.merge_all()
-
 			# Instantiate a SummaryWriter to output summaries and the Graph.
 			self.summary_writer = tf.summary.FileWriter(self.save_file, self.sess.graph)
 

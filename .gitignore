@@ -29,6 +29,9 @@ wheels/
 data/
 */data/
 
+# Ignore Pretrained models
+*/pretrain/
+
 # Ignore Checkpoint Logs
 logs/
 */logs/

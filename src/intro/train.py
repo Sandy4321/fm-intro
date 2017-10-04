@@ -24,7 +24,7 @@ import model as model_classes
 
 
 #===== Parse Arguments
-def parse_args_train(model_type):
+def parse_args_train():
 	parser = argparse.ArgumentParser(description="Run Collaborative Filter models.")
 
 	parser.add_argument('--filename', nargs=1, default='u.data',
@@ -41,7 +41,7 @@ def parse_args_train(model_type):
 						help='Dataset split proportion [train, valid, test].')
 
 	# Model
-	parser.add_argument('--model_type', nargs='?', default='FM',
+	parser.add_argument('--model_type', nargs='?', default='AFM',
 						help='Model to run.')
 	parser.add_argument('--process', nargs='?', default='train',
 						help='Process type: train, evaluate.')
@@ -72,21 +72,21 @@ def parse_args_train(model_type):
 
 
 	# Attentional Factorization
+	parser.add_argument('--hidden_factor_1', nargs=1, type=int, default=16,
+                        help='Number of hidden factors.')
+	parser.add_argument('--hidden_factor_2', nargs=1, type=int, default=16,
+                        help='Number of hidden factors.')
 	parser.add_argument('--valid_dimen', type=int, default=3,
 						help='Valid dimension of the dataset. The number of columns (e.g. frappe=10, ml-tag=3)')
-	parser.add_argument('--epoch', type=int, default=20,
-						help='Number of epochs.')
-	parser.add_argument('--pretrain', type=int, default=-1,
-						help='flag for pretrain. 1: initialize from pretrain; 0: randomly initialize; -1: save to pretrain file; 2: initialize from pretrain and save to pretrain file')
-	parser.add_argument('--batch_size', type=int, default=4096,
-						help='Batch size.')
 	parser.add_argument('--attention', type=int, default=1,
 						help='flag for attention. 1: use attention; 0: no attention')
-	parser.add_argument('--hidden_factor', nargs='?', default='[16,16]',
-						help='Number of hidden factors.')
 	parser.add_argument('--lamda_attention', type=float, default=1e+2,
 						help='Regularizer for attention part.')
-	parser.add_argument('--keep', nargs='?', default='[1.0,0.5]',
+	# parser.add_argument('--keep', nargs='+', type=float, default=[1.0, 0.5],
+	# 					help='Keep probility (1-dropout) of each layer. 1: no dropout. The first index is for the attention-aware pairwise interaction layer.')
+	parser.add_argument('--keep_1', nargs=1, type=float, default=1.0,
+						help='Keep probility (1-dropout) of each layer. 1: no dropout. The first index is for the attention-aware pairwise interaction layer.')
+	parser.add_argument('--keep_2', nargs=1, type=float, default=0.5,
 						help='Keep probility (1-dropout) of each layer. 1: no dropout. The first index is for the attention-aware pairwise interaction layer.')
 	parser.add_argument('--lr', type=float, default=0.1,
 						help='Learning rate.')
@@ -94,14 +94,10 @@ def parse_args_train(model_type):
 						help='Freese all params of fm and learn attention params only.')
 	parser.add_argument('--optimizer', nargs='?', default='AdagradOptimizer',
 						help='Specify an optimizer type (AdamOptimizer, AdagradOptimizer, GradientDescentOptimizer, MomentumOptimizer).')
-	parser.add_argument('--verbose', type=int, default=1,
-						help='Whether to show the performance of each epoch (0 or 1)')
-	parser.add_argument('--batch_norm', type=int, default=0,
-					help='Whether to perform batch normaization (0 or 1)')
 	parser.add_argument('--decay', type=float, default=0.999,
-					help='Decay value for batch norm')
+						help='Decay value for batch norm')
 	parser.add_argument('--activation', nargs='?', default='relu',
-					help='Which activation function to use for deep layers: relu, sigmoid, tanh, identity')
+						help='Which activation function to use for deep layers: relu, sigmoid, tanh, identity')
 
 
 	return parser.parse_args()
@@ -110,12 +106,22 @@ def parse_args_train(model_type):
 
 
 def make_save_file(args):
-	pretrain_path = './pretrain/' + args.model_type + '_%s_%d' %(args.dataset, args.factor_k)
+
+
+	if args.model_type == 'FM':
+		pretrain_path = './pretrain/' + args.model_type + '_%s_%d' %(args.dataset, args.factor_k)
+	elif args.model_type == 'AFM':
+		pretrain_path = './pretrain/' + args.model_type + '_%s_%d_%d' %(args.dataset, args.hidden_factor_1, args.hidden_factor_2)
+
 	if args.mla:
 		pretrain_path += '_mla'
 	if not os.path.exists(pretrain_path):
 		os.makedirs(pretrain_path)
-	save_file = pretrain_path + '/%s_%d' %(args.dataset, args.factor_k)
+
+	if args.model_type == 'FM':
+		save_file = pretrain_path + '/%s_%d' %(args.dataset, args.factor_k)
+	elif args.model_type == 'AFM':
+		save_file = pretrain_path + '/%s_%d_%d' %(args.dataset, args.hidden_factor_1, args.hidden_factor_2)
 	return save_file
 
 def train(args):
@@ -163,7 +169,8 @@ def train(args):
 				pretrain_flag= args.pretrain, 
 				save_file=make_save_file(args), 
 				attention=args.attention, 
-				factor_k=args.factor_k, 
+				hidden_factor_1=args.hidden_factor_1, 
+				hidden_factor_2=args.hidden_factor_2, 
 				valid_dimension=data.col_m, 
 				activation_function=args.activation, 
 				freeze_fm=args.freeze_fm, 
@@ -171,7 +178,8 @@ def train(args):
 				batch_size = args.batch_size, 
 				learning_rate = args.learning_rate, 
 				lamda_attention=args.lamda_attention, 
-				keep=args.keep, 
+				keep_1=args.keep_1, 
+				keep_2=args.keep_2, 
 				optimizer_type = args.optimizer_type, 
 				batch_norm = args.batch_norm, 
 				decay=args.decay, 
@@ -263,9 +271,11 @@ if __name__ == '__main__':
 		args.keep = 0.7
 		args.batch_norm = 1
 
-	args.process = 'evaluate'
-	args.epoch = 200
-	args.factor_k = 32
+	args.process = 'train'
+	args.epoch = 2000
+	args.factor_k = 4
+	args.hidden_factor_1 = 12
+	args.hidden_factor_2 = 12
 
 	if args.process == 'train':
 		train(args)
