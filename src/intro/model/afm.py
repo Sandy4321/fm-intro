@@ -48,11 +48,7 @@ def parse_args():
 						help='Number of hidden factors.')
 	parser.add_argument('--lamda_attention', type=float, default=1e+2,
 						help='Regularizer for attention part.')
-<<<<<<< HEAD
 	parser.add_argument('--keep', nargs='+', type=float, default=[1.0, 0.5],
-=======
-	parser.add_argument('--keep', nargs='?', default='[1.0,0.5]',
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 						help='Keep probility (1-dropout) of each layer. 1: no dropout. The first index is for the attention-aware pairwise interaction layer.')
 	parser.add_argument('--lr', type=float, default=0.1,
 						help='Learning rate.')
@@ -72,33 +68,21 @@ def parse_args():
 	return parser.parse_args()
 
 class AFM(BaseEstimator, TransformerMixin):
-<<<<<<< HEAD
 	def __init__(self, features_p, pretrain_flag, save_file, attention, hidden_factor_1, hidden_factor_2, valid_dimension, activation_function,
 				 freeze_fm, epoch, batch_size, learning_rate, lamda_attention, keep_1, keep_2, optimizer_type, batch_norm, decay, verbose, micro_level_analysis, random_seed=2016):
-=======
-	def __init__(self, features_p, pretrain_flag, save_file, attention, factor_k, valid_dimension, activation_function,
-				 freeze_fm, epoch, batch_size, learning_rate, lamda_attention, keep, optimizer_type, batch_norm, decay, verbose, micro_level_analysis, random_seed=2016):
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
+
 		# bind params to class
 		self.batch_size = batch_size
 		self.learning_rate = learning_rate
 		self.attention = attention
-<<<<<<< HEAD
 		self.factor_k = [hidden_factor_1, hidden_factor_2]
-=======
-		self.factor_k = factor_k
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 		self.valid_dimension = valid_dimension
 		self.activation_function = activation_function
 		self.save_file = save_file
 		self.pretrain_flag = pretrain_flag
 		self.features_p = features_p
 		self.lamda_attention = lamda_attention
-<<<<<<< HEAD
 		self.keep = [keep_1, keep_2]
-=======
-		self.keep = keep
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 		self.freeze_fm = freeze_fm
 		self.epoch = epoch
 		self.random_seed = random_seed
@@ -146,11 +130,7 @@ class AFM(BaseEstimator, TransformerMixin):
 			num_interactions = self.valid_dimension*(self.valid_dimension-1)/2
 			if self.attention:
 				self.attention_mul = tf.reshape(tf.matmul(tf.reshape(self.element_wise_product, shape=[-1, self.factor_k[1]]), \
-<<<<<<< HEAD
 					self.weights['attention_W']), shape=[-1, tf.to_int32(num_interactions), tf.to_int32(self.factor_k[0])])
-=======
-					self.weights['attention_W']), shape=[-1, num_interactions, self.factor_k[0]])
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 				self.attention_exp = tf.exp(tf.reduce_sum(tf.multiply(self.weights['attention_p'], tf.nn.relu(self.attention_mul + \
 					self.weights['attention_b'])), 2, keep_dims=True)) # None * (M'*(M'-1)) * 1
 				self.attention_sum = tf.reduce_sum(self.attention_exp, 1, keep_dims=True) # None * 1 * 1
@@ -183,7 +163,6 @@ class AFM(BaseEstimator, TransformerMixin):
 			else:
 				self.loss = tf.nn.l2_loss(tf.subtract(self.train_labels, self.out))
 
-<<<<<<< HEAD
 			# Set the summary snapshot loss
 			self.summary_train = tf.summary.scalar('loss_train', self.loss)
 			self.summary_valid = tf.summary.scalar('loss_valid', self.loss)
@@ -203,17 +182,6 @@ class AFM(BaseEstimator, TransformerMixin):
 
 			# Minimize
 			self.optimizer = optimizer.minimize(self.loss, global_step=global_step)
-=======
-			# Optimizer.
-			if self.optimizer_type == 'AdamOptimizer':
-				self.optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate, beta1=0.9, beta2=0.999, epsilon=1e-8).minimize(self.loss)
-			elif self.optimizer_type == 'AdagradOptimizer':
-				self.optimizer = tf.train.AdagradOptimizer(learning_rate=self.learning_rate, initial_accumulator_value=1e-8).minimize(self.loss)
-			elif self.optimizer_type == 'GradientDescentOptimizer':
-				self.optimizer = tf.train.GradientDescentOptimizer(learning_rate=self.learning_rate).minimize(self.loss)
-			elif self.optimizer_type == 'MomentumOptimizer':
-				self.optimizer = tf.train.MomentumOptimizer(learning_rate=self.learning_rate, momentum=0.95).minimize(self.loss)
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 
 			# init
 			self.saver = tf.train.Saver()
@@ -221,13 +189,10 @@ class AFM(BaseEstimator, TransformerMixin):
 			self.sess = self._init_session()
 			self.sess.run(init)
 
-<<<<<<< HEAD
 			#=== Summary
 			# Instantiate a SummaryWriter to output summaries and the Graph.
 			self.summary_writer = tf.summary.FileWriter(self.save_file, self.sess.graph)
 
-=======
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 			# number of params
 			total_parameters = 0
 			for variable in self.weights.values():
@@ -237,11 +202,7 @@ class AFM(BaseEstimator, TransformerMixin):
 					variable_parameters *= dim.value
 				total_parameters += variable_parameters
 			if self.verbose > 0:
-<<<<<<< HEAD
-				print("#params: %d" %total_parameters )
-=======
-				print "#params: %d" %total_parameters 
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
+				print("#params: %d" %total_parameters)
 	
 	def _init_session(self):
 		# adaptively growing video memory
@@ -352,7 +313,6 @@ class AFM(BaseEstimator, TransformerMixin):
 		# Check Init performance
 		if self.verbose > 0:
 			t2 = time()
-<<<<<<< HEAD
 			init_train = self.evaluate(Train_data, data_type='train')
 			init_valid = self.evaluate(Validation_data, data_type='valid')
 			print("Init: \t train=%.4f, validation=%.4f [%.1f s]" %(init_train, init_valid, time()-t2))
@@ -362,17 +322,6 @@ class AFM(BaseEstimator, TransformerMixin):
 			self.shuffle_in_unison_scary(Train_data['X'], Train_data['Y'])
 			total_batch = int(len(Train_data['Y']) / self.batch_size)
 			for i in range(total_batch):
-=======
-			init_train = self.evaluate(Train_data)
-			init_valid = self.evaluate(Validation_data)
-			print("Init: \t train=%.4f, validation=%.4f [%.1f s]" %(init_train, init_valid, time()-t2))
-
-		for epoch in xrange(self.epoch):
-			t1 = time()
-			self.shuffle_in_unison_scary(Train_data['X'], Train_data['Y'])
-			total_batch = int(len(Train_data['Y']) / self.batch_size)
-			for i in xrange(total_batch):
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 				# generate a batch
 				batch_xs = self.get_random_block_from_data(Train_data, self.batch_size)
 				# Fit training
@@ -380,13 +329,8 @@ class AFM(BaseEstimator, TransformerMixin):
 			t2 = time()
 
 			# evaluate training and validation datasets
-<<<<<<< HEAD
 			train_result = self.evaluate(Train_data, epoch, data_type='train')
 			valid_result = self.evaluate(Validation_data, epoch, data_type='valid')
-=======
-			train_result = self.evaluate(Train_data)
-			valid_result = self.evaluate(Validation_data)
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 			self.train_rmse.append(train_result)
 			self.valid_rmse.append(valid_result)
 			if self.verbose > 0 and epoch%self.verbose == 0:
@@ -400,11 +344,7 @@ class AFM(BaseEstimator, TransformerMixin):
 				break
 
 		if self.pretrain_flag < 0 or self.pretrain_flag == 2:
-<<<<<<< HEAD
 			print("Save model to file as pretrain.")
-=======
-			print "Save model to file as pretrain."
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 			self.saver.save(self.sess, self.save_file)
 
 	def eva_termination(self, valid):
@@ -413,21 +353,14 @@ class AFM(BaseEstimator, TransformerMixin):
 				return True
 		return False
 
-<<<<<<< HEAD
 	def evaluate(self, data, epoch=None, data_type='train'):  # evaluate the results for an input set
-=======
-	def evaluate(self, data):  # evaluate the results for an input set
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 		num_example = len(data['Y'])
 		# fetch the first batch
 		batch_index = 0
 		batch_xs = self.get_ordered_block_from_data(data, self.batch_size, batch_index)
 		# batch_xs = data
 		y_pred = None
-<<<<<<< HEAD
 
-=======
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 		# if len(batch_xs['X']) > 0:
 		while len(batch_xs['X']) > 0:
 			num_batch = len(batch_xs['Y'])
@@ -444,8 +377,6 @@ class AFM(BaseEstimator, TransformerMixin):
 
 		y_true = np.reshape(data['Y'], (num_example,))
 
-<<<<<<< HEAD
-
 		# Datatype
 		if data_type == 'train':
 			summary_type = self.summary_train
@@ -458,9 +389,6 @@ class AFM(BaseEstimator, TransformerMixin):
 		summary_str = self.sess.run(summary_type, feed_dict=feed_dict)
 		self.summary_writer.add_summary(summary_str, epoch)
 		self.summary_writer.flush()
-
-=======
->>>>>>> 1ecd770dcfcc25c9907d36068910d9af197d9282
 		predictions_bounded = np.maximum(y_pred, np.ones(num_example) * min(y_true))  # bound the lower values
 		predictions_bounded = np.minimum(predictions_bounded, np.ones(num_example) * max(y_true))  # bound the higher values
 		RMSE = math.sqrt(mean_squared_error(y_true, predictions_bounded))
